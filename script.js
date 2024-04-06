@@ -129,9 +129,15 @@ if (isMobile() == false) {
 
 $('.grid-item').on("click", function() {
     var group = $(this).attr('class').split(" ")[1];
-    $("."+group).toggleClass('selected')
-                .toggleClass('hovered-selected')
-                .toggleClass('hovered');
+
+    if (isMobile() == true) {
+        $("."+group).toggleClass('selected')
+    } else {
+        $("."+group).toggleClass('selected')
+        .toggleClass('hovered-selected')
+        .toggleClass('hovered');
+    }
+
 
     if (!selectedGroups.includes(group)) {
         selectedGroups.push(group); // Add the element if it doesn't exist
