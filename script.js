@@ -38,6 +38,10 @@ function setArrayCookie(name, value, days) {
     document.cookie = name + "=" + jsonValue + ";max-age=" + (days * 24 * 60 * 60) + ";path=/";
 }
   
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 function createCookie(name, value, days) {
     var expires;
     if (days) {
@@ -89,7 +93,7 @@ setRandomKana();
 
 function checkAnswer() {
     var inputBox = $(".answer");
-    var answer = inputBox.val();
+    var answer = inputBox.val().toLowerCase();
     if (randomKey == answer) {
         setRandomKana();
     }
@@ -102,24 +106,26 @@ function checkAnswer() {
     }
 }
 
-$('.grid-item').hover(function(){
-    var group = $(this).attr('class').split(" ")[1];
-
-    if ($("."+group).hasClass('selected')) {
-        $("."+group).addClass('hovered-selected');
-    } else {
-        $("."+group).addClass('hovered');
-    }
-}, function(){
-    var group = $(this).attr('class').split(" ")[1];
-
-    if ($("."+group).hasClass('selected')) {
-        $("."+group).removeClass('hovered-selected');
-        $("."+group).removeClass('hovered');
-    } else {
-        $("."+group).removeClass('hovered');
-    }
-});
+if (isMobile() == false) {
+    $('.grid-item').hover(function(){
+        var group = $(this).attr('class').split(" ")[1];
+    
+        if ($("."+group).hasClass('selected')) {
+            $("."+group).addClass('hovered-selected');
+        } else {
+            $("."+group).addClass('hovered');
+        }
+    }, function(){
+        var group = $(this).attr('class').split(" ")[1];
+    
+        if ($("."+group).hasClass('selected')) {
+            $("."+group).removeClass('hovered-selected');
+            $("."+group).removeClass('hovered');
+        } else {
+            $("."+group).removeClass('hovered');
+        }
+    });
+}
 
 $('.grid-item').on("click", function() {
     var group = $(this).attr('class').split(" ")[1];

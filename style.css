@@ -146,6 +146,24 @@ input:focus {
     user-select: none;
 }
 
+@media only screen and (max-width: 400px) {
+    .hiragana-settings {
+        margin-top: 100px;
+        display: grid;
+        grid-template-rows: repeat(5, 60px); 
+        grid-template-columns: repeat(10, 60px);
+        gap: 5px;
+    }
+
+    .group {
+        color: #E5B8F4;
+        font-size: 25px;
+        font-weight: 600;
+        padding: 10px;
+    }
+}
+
+
 @media only screen and (max-width: 760px) {
     .hiragana-settings {
         transform: rotate(-90deg);
