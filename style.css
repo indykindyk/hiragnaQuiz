@@ -1,0 +1,167 @@
+
+.title-bar {
+    display: flex;
+    width: 100%;
+    background-color: #2D033B;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+body {
+    background-color: #2D033B;
+}
+
+.text {
+    color: #E5B8F4;
+    margin-left: 10px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.romanji {
+    font-size: 20px;
+    margin-top: 20px;
+    font-family: "Poppins";
+}
+
+.quizz-box {
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.actkana {
+    font-size: 4em;
+    margin-top: 30vh;
+    color: #E5B8F4;
+}
+
+.answer {
+    width: 110px;
+    font-size: 2em;
+    border: none;
+    background-color: #2D033B;
+    border-bottom: 2px solid #E5B8F4;
+    text-align: center;
+    color: #810CA8;
+    font-family: "Poppins";
+} 
+
+input:focus {
+    outline: none;
+}
+
+.wrong-answer {
+    border: none;
+    color: red;
+    border-bottom: solid 2px red;
+}   
+
+
+.hiragana-settings {
+    margin-top: 100px;
+    display: grid;
+    grid-template-rows: repeat(5, 70px); 
+    grid-template-columns: repeat(10, 70px);
+    gap: 5px;
+}
+
+.rotate {
+    rotate: 0 0 0 90deg;
+}
+
+.group {
+    color: #E5B8F4;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.grid-item {
+    user-select: none;
+    text-align: center;
+    border: 2px solid #810CA8;
+}
+
+.selected {
+    text-align: center;
+    border: 2px solid greenyellow; 
+}
+
+.desc {
+    color: #E5B8F4; 
+    font-family: "Poppins";
+    margin-bottom: 10px;
+}
+
+.hovered {
+    text-align: center;
+    border: 2px solid #E5B8F4; 
+}
+
+.hovered-selected {
+    text-align: center;
+    border: 2px solid green; 
+}
+
+
+.settings-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.start {
+    font-family: "Poppins";
+    margin-top: 40px;
+    width: 100px;
+    color: #E5B8F4;
+    border: 2px solid #810CA8;
+    background-color: #2D033B;
+}
+
+.start:hover {
+    color: #810CA8;
+    background-color: #E5B8F4;
+    border: 2px solid #E5B8F4;
+}
+
+.not-selected {
+    user-select: none;
+    text-align: center;
+    border: 2px solid red;
+}
+
+.rotate {
+    transform: rotate(90deg);
+    transform-origin: top left;
+    margin-left: 365px;
+}
+
+.title-bar {
+    user-select: none;
+}
+
+@media only screen and (max-width: 760px) {
+    .hiragana-settings {
+        transform: rotate(-90deg);
+        transform-origin: center;
+        margin-top: 250px;
+    }
+
+    .grid-item {
+        transform: rotate(90deg);
+    }
+
+    .start {
+        margin-top: 210px;
+    }
+}
+
+.hidden {
+    display: none;
+}
